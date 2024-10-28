@@ -4,7 +4,7 @@ from flask import Flask, url_for
 import os
 
 app = Flask(__name__)
-
+app.debug = False
 
 @app.route('/')
 @app.route('/index')
