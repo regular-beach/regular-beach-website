@@ -1,0 +1,88 @@
+/* General reset for body and html */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh; /* Make the row full height */
+}
+
+.column {
+    flex: 1 1 50%; /* Allow columns to grow and shrink */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Center items vertically */
+    justify-content: flex-start; /* Start alignment */
+}
+
+.responsive-title {
+    text-align: left; /* Center align the title */
+}
+
+.title {
+    line-height: .8; /* Adjust line height */
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    font-size: 14.7vw; /* Responsive font size */
+    color: rgb(17, 0, 253);
+    letter-spacing: -.03em;
+    padding: 0;
+    display: inline-block;
+}
+
+nav {
+    font-family: FT88-Expanded;
+    color: grey;
+    padding-top: 55px; /* Fixed distance below the title */
+    padding-left: 15px;
+}
+
+.return {
+    font-family: FT88-Expanded;
+    color: rgb(189, 64, 127);
+    margin-top: 55px; /* Fixed distance below the title */
+    padding-left: 15px;
+    font-size: 1.5em;
+    
+}
+
+ul {
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove bullet points */
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+    font-size: 3vw;
+}
+
+.featurephoto {
+    position: absolute;
+    padding-top: 2.5%;
+    padding-right: 25px;
+    width: 50%;
+    overflow: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 640px) {
+    .row {
+        flex-direction: column; /* Stack columns on smaller screens */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .column {
+        width: 100%; /* Full width for stacked columns */
+        margin-bottom: 20px; /* Space between stacked items */
+    }
+
+    .title {
+        font-size: 10vw; /* Adjust font size for smaller screens */
+    }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+    <title>{% block title %}regular beach{% endblock %}</title>
+
+    <!-- Base CSS -->
+    <link href="{{ url_for('static', filename='styles/base.css') }}" rel="stylesheet" />
+  
+{%endblock%}
+</head>
+
+<body>
+      
+  <main>
+    {% block main %}
+    {% endblock %}
+  </main>
+
+  {% block scripts %}
+  {% endblock %}
+
+
+
+</body>
+</html>   

@@ -1,0 +1,15 @@
+.video1 {
+    
+    top: 10em;
+    left: 0;
+    
+    margin-bottom: 25px;
+    padding-top: 25px;
+    padding-left: 25px;
+    overflow: none;
+}
+
+iframe {
+    width: 50vw;
+    height: 50%;
+}

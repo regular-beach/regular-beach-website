@@ -1,56 +1,34 @@
-<!--nav bar-->
-<img width="30%" height="30%" src="{{ url_for('static', filename='currentlogo.png') }}" />  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='styles/header.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='styles/featured.css') }}" rel="stylesheet" />
+      
+</head>
 
-<link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
-
-
-<script type="text/javascript">
-    function showOrHide(clickedElem) {
-      var selector = clickedElem.getAttribute("data-selector");
-      console.log("Clicked on (=this): " + clickedElem);
-      console.log("Data-selector: " + selector);
-      var target = document.querySelector(selector);
-  
-      if (target.style.display == "none") {
-        target.style.display = "block";
-        clickedElem.text = "index";
-      } else {
-        target.style.display = "none";
-        clickedElem.text = "index";
-      }
-    }
-  
-    function showOrHide2(clickedElem) {
-      var selector = clickedElem.getAttribute("data-selector");
-      console.log("Clicked on (=this): " + clickedElem);
-      console.log("Data-selector: " + selector);
-      var target = document.querySelector(selector);
-  
-      if (target.style.display == "none") {
-        target.style.display = "block";
-        clickedElem.text = "contact";
-      } else {
-        target.style.display = "none";
-        clickedElem.text = "contact";
-      }
-    }
-  </script>
-  
-  
-  <nav>
-    <ul>
-  <a href="#" id="id1" data-selector="#block1" onclick="showOrHide(this)">index</a>
-  <div style="display:none" id="block1">
-    
-    <li onclick="location.href" class="nav"><a href="projects.html"></a>projects</li>
-    <li class="nav"><a href="video library.html"></a>video library</li>
-  
-  </div>
-  <br>
-  
-  <a href="#" id2="id2" data-selector="#block2" onclick="showOrHide2(this)">contact</a>
-  <div style="display:none" id="block2">regularbeachmedia<br>@gmail.com
-  
-    </div>
-    </ul>
-  </nav>
+<body>
+    <header>
+        <div class="row">
+            <div class="column column-left">
+                <div class="responsive-title">
+                    <a class="title" href="{{ url_for('index') }}">REG<br>ULAR BEACH</a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('video') }}">Video</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+           
+            <div class="column column-right">
+                <img class="featurephoto" src="static/img/photofeatures/photofeature1/05.jpg">
+                <h1>photo feature</h1>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
