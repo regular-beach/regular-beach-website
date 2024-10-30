@@ -4,3 +4,22 @@
     font-size: 4em;
     color: rgb(17, 0, 253);
 }
+
+.return {
+    font-family: FT88-Expanded;
+    color: rgb(189, 64, 127);
+    margin-top: 55px; /* Fixed distance below the title */
+    padding-left: 15px;
+    font-size: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    font-size: 4em;
+    color: rgb(17, 0, 253);
+    padding-left: 15px;
+    margin-top: 200px;
+
+}
