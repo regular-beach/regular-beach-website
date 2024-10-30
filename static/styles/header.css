@@ -24,6 +24,10 @@ body, html {
     text-align: left; /* Center align the title */
 }
 
+.line-break {
+    display: block; /* Forces the element to start on a new line */
+}
+
 .title {
     line-height: .8; /* Adjust line height */
     font-family: "stevie-sans", sans-serif;
@@ -33,6 +37,11 @@ body, html {
     letter-spacing: -.03em;
     padding: 0;
     display: inline-block;
+}
+
+@font-face {
+    font-family: FT88-Expanded;
+    src: url(/static/FT88-Expanded.ttf);
 }
 
 nav {
@@ -68,21 +77,86 @@ a {
     padding-right: 25px;
     width: 50%;
     overflow: none;
+    right: 0;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 640px) {
-    .row {
-        flex-direction: column; /* Stack columns on smaller screens */
-        height: auto; /* Allow height to adjust */
+@media (max-width: 960px) {
+    .featurephoto {
+        height: 100vh; /* Full height for the feature photo */
     }
 
     .column {
         width: 100%; /* Full width for stacked columns */
-        margin-bottom: 20px; /* Space between stacked items */
     }
 
     .title {
+        margin-top: 20px; /* Space below the photo */
         font-size: 10vw; /* Adjust font size for smaller screens */
     }
+}
+
+@media (max-width: 1080px) {
+.featurephoto {
+    position: relative; /* Make it fixed to cover the entire viewport */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100vw; /* Full width of the viewport */
+    height: 100%; /* Full height of the viewport */
+    object-fit: cover; /* Maintain aspect ratio while covering */
+    padding: 0;
+    display: inline-flexbox;
+}
+
+.row {
+    flex-direction: column; /* Stack columns */
+    height: auto; /* Allow height to adjust */
+}
+
+.column {
+    width: 100%; /* Full width for stacked columns */
+    position: relative; /* Ensure column is positioned correctly */
+    margin-top: 0; /* No margin on top */
+}
+
+.title {
+    margin-top: 0px; /* Space below the feature photo */
+    font-size: 10em; /* Adjust font size for smaller screens */
+    width: 100%; /* Make title take full width */
+    text-align: left; /* Center the title */
+    position: absolute;
+    top: 1em;
+    z-index: 1; /* Bring it above the background photo */
+}
+
+nav {
+   
+    text-align: left; 
+    position: absolute; 
+    z-index: 1; 
+}
+}
+
+@media (max-width: 640px) {
+    .title {
+        font-size: 10em; /* Adjust font size for even smaller screens */
+        top: 2.3em;
+    }
+
+    nav {
+        font-size: 4em;
+        line-height: 10%;
+        padding-top: 0;
+        padding-bottom: 15px;
+    }
+
+    .featurephoto {
+        position: absolute;
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        width: 100vw; /* Full width of the viewport */
+        height: auto; /* Full height of the viewport */
+        overflow: 0; /* Maintain aspect ratio while covering */
+        padding: 0;
+        display: inline-flexbox;
+}
 }

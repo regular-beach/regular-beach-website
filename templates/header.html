@@ -10,11 +10,19 @@
 
 <body>
     <header>
+        <div class="column column-right">
+            <img class="featurephoto" src="static/img/photofeatures/photofeature1/05.jpg">
+            
+        </div>
+
         <div class="row">
             <div class="column column-left">
                 <div class="responsive-title">
-                    <a class="title" href="{{ url_for('index') }}">REG<br>ULAR BEACH</a>
+                    <a class="title" href="{{ url_for('index') }}">
+                        REG<br>ULAR<span class="line-break">BEACH</span>
+                    </a>
                 </div>
+                
                 <nav>
                     <ul>
                         <li><a href="{{ url_for('projects') }}">Projects</a></li>
@@ -23,11 +31,7 @@
                     </ul>
                 </nav>
             </div>
-           
-            <div class="column column-right">
-                <img class="featurephoto" src="static/img/photofeatures/photofeature1/05.jpg">
-                <h1>photo feature</h1>
-            </div>
+        
         </div>
     </header>
 </body>

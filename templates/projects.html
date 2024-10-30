@@ -1,1 +1,15 @@
-regular beach projects page
+<link href="{{ url_for('static', filename='styles/base.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles/projects.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles/header.css') }}" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+
+    <a class="return" href="{{ url_for('index') }}">Return</a>
+
+
+<ul>
+  {% for project in projects %}
+    <li> <a class="project-link" href="{{ url_for('project', project=project) }}">{{ project }}</a></li>
+  {% else %}
+    <li>No projects found</li>
+  {% endfor %}
