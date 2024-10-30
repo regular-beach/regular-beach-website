@@ -12,24 +12,15 @@ def index():
     return render_template('index.html')
 
 @app.route('/projects')
-def projects_list():
-    projects = ['photofeature1', 'letter prints']  # List of your project names
-    return render_template('projects.html', projects=projects)
+def projects():
+    return render_template('projects.html')
 
 
 
-@app.route('/projects/<project>')
+@app.route('/project/<project>')
 def project(project):
-    try:
-        return render_template(f'{project}.html')
-    except Exception as e:
-        print(f"Error rendering template: {e}")  # Log the error
-        return "Internal Server Error", 500  # Return a 500 error response
+    return render_template(f'{project}.html')
 
-
-#@app.route('/project/photofeature1')
-#def photofeature1():
-    #return render_template('photofeature1.html')
 
 @app.route('/video')
 def video():
@@ -59,8 +50,8 @@ def inject_projects():
 #if __name__ == '__main__':
  #app.run(host='0.0.0.0') 
   
-#if __name__ == "__main__":
-    #serve(app, host="0.0.0.0", port=8000)
+if __name__ == "__main__":
+    serve(app, host="0.0.0.0", port=8000)
 
 
     
