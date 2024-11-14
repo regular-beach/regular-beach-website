@@ -3,12 +3,19 @@
 
 <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
 
-    <a class="return" href="{{ url_for('index') }}">Return</a>
-
+<a class="return" href="{{ url_for('index') }}">Return</a>
 
 <ul>
   {% for project in projects %}
-    <li> <a class="project-link" href="{{ url_for('project', project=project) }}">{{ project }}</a></li>
+    <li>
+      <a class="project-link" href="{{ url_for('project', project_name=project['name']) }}">
+        {{ project['name'] }}
+      </a>
+      <span class="details">
+        - {{ project['date'] }} | {{ project['medium'] }} | {{ project['artist'] }}
+      </span>
+    </li>
   {% else %}
     <li>No projects found</li>
   {% endfor %}
+</ul>

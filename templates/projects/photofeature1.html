@@ -1,7 +1,21 @@
 <link href="{{ url_for('static', filename='styles/photofeature1.css') }}" rel="stylesheet" />
 
 
-<a class="return" href="{{ url_for('index') }}">Return</a>
+<a class="return" href="{{ url_for('projects') }}">Return to Projects</a>
+
+<div class="project-details">
+  <h1>{{ project['name'] }}</h1>
+  
+  <div class="project-meta">
+    <p><strong>Date:</strong> {{ project['date'] }}</p>
+    <p><strong>Medium:</strong> {{ project['medium'] }}</p>
+    <p><strong>Artist:</strong> {{ project['artist'] }}</p>
+  </div>
+
+  <div class="project-description">
+    <p>{{ project['description'] }}</p>
+  </div>
+</div>
 
 
 <!--<div class="column">

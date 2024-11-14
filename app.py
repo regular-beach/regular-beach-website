@@ -13,13 +13,24 @@ def index():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html')
+    return render_template('projects.html', projects=projects)
 
 
 
-@app.route('/project/<project>')
-def project(project):
-    return render_template(f'{project}.html')
+@app.route('/project/<project_name>')
+def project(project_name):
+    # Find the project by name in your `projects` list
+    project = next((p for p in projects if p["name"] == project_name), None)
+    if project is None:
+        return "Project not found", 404
+    
+    # Render the specific template for this project within the `projects` subdirectory
+    try:
+        return render_template(f'projects/{project_name}.html', project=project)
+    except Exception as e:
+        # Handle missing or misnamed templates
+        return f"Error loading project template: {e}", 404
+
 
 
 @app.route('/video')
@@ -34,17 +45,32 @@ def buy():
 def about():
     return render_template('about.html')
 
-@app.context_processor
-def inject_projects():
-    path = "templates/projects"
-    projects = []
-    for root, d_names, f_names in os.walk(path):
-        for f in f_names:
-            # Filter for HTML files only
-            if f.endswith('.html'):
-                project_name = f.split('.')[0]  # Remove the file extension
-                projects.append(project_name)
-    return dict(projects=projects)
+
+projects = [
+    {
+        "name": "letterprints",
+        "date": "January '23 - present",
+        "medium": "lino-cut",
+        "artist": "reg-beach",
+        "description": "Regular Beach experimental type project no.1."
+    },
+    {
+        "name": "photofeature1",
+        "date": "november '24",
+        "medium": "35mm",
+        "artist": "reg-beach",
+        "description": "12 imgs from 2 rolls of 35mm."
+    },
+    {
+
+        "name": "photofeature2",
+        "date": "november '24",
+        "medium": "iphone",
+        "artist": "july guzman",
+        "description": "informing artistic practice."
+    }
+    # Add more projects as needed
+]
 
 
 #if __name__ == '__main__':
