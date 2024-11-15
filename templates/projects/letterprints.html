@@ -1,4 +1,7 @@
-<a class="return" href="{{ url_for('projects') }}">Return to Projects</a>
+<link href="{{ url_for('static', filename='styles/projectbase.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles/projects.css') }}" rel="stylesheet" />
+
+<a class="return" href="{{ url_for('projects') }}">Return</a>
 
 <div class="project-details">
   <h1>{{ project['name'] }}</h1>
@@ -10,7 +13,7 @@
   </div>
 
   <div class="project-description">
-    <p>{{ project['description'] }}</p>
+    {{ project['description'] }}
   </div>
 </div>
 

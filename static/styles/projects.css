@@ -1,32 +1,56 @@
 
-
+a {
+    text-decoration: none;
+    color: rgb(17, 0, 253);
+}
 .return {
     font-family: "stevie-sans", sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     color: rgb(17, 0, 253);
-    margin-top: 55px; /* Fixed distance below the title */
+    margin-top: 55px;
     padding-left: 15px;
     padding-top: 25px;
     font-size: 1.5em;
 }
 
-a {
-    text-decoration: none;
-    color: rgb(17, 0, 253);
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 
-
-li{
-    font-family: "stevie-sans", sans-serif;
+.header-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Adjust column widths as needed */
+    padding: 15px 15px;
+    border-bottom: 1px solid rgb(17, 0, 253);
     color: rgb(17, 0, 253);
-    margin-top: 55px; /* Fixed distance below the title */
-    padding-left: 15px;
     font-size: 1.5em;
 }
 
-
-.detials{
-text-align: right;
+/* Styling for each project item */
+li {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Matches the header layout */
+    font-family: "stevie-sans", sans-serif;
+    padding: 15px 15px;
+    border-bottom: 1px solid rgb(17, 0, 253);
+    color: rgb(17, 0, 253);
+    font-size: 1.5em;
 }
+
+/* Individual cells within the grid */
+.header-row span, .details span, .project-link {
+    text-align: left;
+}
+
+/* Ensures the project name link spans across the first column */
+.project-link {
+    color: rgb(17, 0, 253);
+    text-decoration: none;
+}
+
+
+

@@ -1,0 +1,29 @@
+h1{
+    font-family: "input-mono-compressed", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2em;
+    padding-left: 15px;
+}
+
+
+.project-meta{
+    padding-left: 15px;
+    font-family: "input-mono-compressed", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: .5em
+
+}
+
+
+.project-description{
+    padding-left: 15px;
+    font-family: "input-mono-compressed", monospace;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em
+}
+
+note for later: full bleed hero image with text highlighted in front of img

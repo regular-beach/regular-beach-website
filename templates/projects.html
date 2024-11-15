@@ -1,21 +1,40 @@
-<link href="{{ url_for('static', filename='styles/base.css') }}" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+    <link href="{{ url_for('static', filename='styles/base.css') }}" rel="stylesheet" />
 <link href="{{ url_for('static', filename='styles/projects.css') }}" rel="stylesheet" />
+    <title>projects</title>
 
-<link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
-
+<body>
 <a class="return" href="{{ url_for('index') }}">Return</a>
 
+
 <ul>
+  <!-- Header row for categories -->
+  <li class="header-row">
+    <span>Project</span>
+    <span>Date</span>
+    <span>Medium</span>
+    <span>Artist</span>
+  </li>
+
+  <!-- List of projects -->
   {% for project in projects %}
     <li>
       <a class="project-link" href="{{ url_for('project', project_name=project['name']) }}">
         {{ project['name'] }}
       </a>
-      <span class="details">
-        {{ project['date'] }} | {{ project['medium'] }} | {{ project['artist'] }}
-      </span>
+      <span class="details">{{ project['date'] }}</span>
+      <span class="details">{{ project['medium'] }}</span>
+      <span class="details">{{ project['artist'] }}</span>
     </li>
-  {% else %}
-    <li>No projects found</li>
   {% endfor %}
 </ul>
+
+
+
+</body>
+</html> 

@@ -49,7 +49,7 @@ def about():
 projects = [
     {
         "name": "letterprints",
-        "date": "January '23 - present",
+        "date": "'23 - present",
         "medium": "lino-cut",
         "artist": "reg-beach",
         "description": "Regular Beach experimental type project no.1."
