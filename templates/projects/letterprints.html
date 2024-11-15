@@ -1,19 +1,28 @@
 <link href="{{ url_for('static', filename='styles/projectbase.css') }}" rel="stylesheet" />
 <link href="{{ url_for('static', filename='styles/projects.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+
+<div class="hero-container">
+  <img class="hero" src="{{ url_for('static', filename='img/regbeachimgprocessing/athlete.jpg') }}">
+ 
+ </div>
 
 <a class="return" href="{{ url_for('projects') }}">Return</a>
 
-<div class="project-details">
+
+<div>
+  <header>
   <h1>{{ project['name'] }}</h1>
   
   <div class="project-meta">
-    <p><strong>Date:</strong> {{ project['date'] }}</p>
-    <p><strong>Medium:</strong> {{ project['medium'] }}</p>
-    <p><strong>Artist:</strong> {{ project['artist'] }}</p>
+    <p>Date: {{ project['date'] }}</p>
+    <p>Medium: {{ project['medium'] }}</p>
+    <p>Artist: {{ project['artist'] }}</p>
   </div>
 
   <div class="project-description">
     {{ project['description'] }}
   </div>
+  </header>
 </div>
 
