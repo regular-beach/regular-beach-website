@@ -3,7 +3,6 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust minmax for size */
     padding: 0; /* Optional padding */
     margin: 0;
-
    top: 80vh;
    align-items: center;
    left: 0;
@@ -25,7 +24,7 @@
 
 @media (max-width: 640px) {
     .image-grid {
-        top: 20vh;
+        top: 1vh;
     }
 .vert{
     width: 100%;
