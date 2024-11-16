@@ -24,14 +24,20 @@
 
 @media (max-width: 640px) {
     .image-grid {
-        top: 1vh;
+    position: absolute;
     }
 .vert{
+    width: 100%;    
+    height: auto;
+
+}
+
+.grid-image{
+
     width: 100%;
     height: auto;
 }
     }
-
     @media (max-width: 1080px) {
         .image-grid {
             top: 65vh;
