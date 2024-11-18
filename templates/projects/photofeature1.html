@@ -1,7 +1,17 @@
-<link href="{{ url_for('static', filename='styles/projectbase.css') }}" rel="stylesheet" />
-<link href="{{ url_for('static', filename='styles/photofeature1.css') }}" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}letterprints{% endblock %}</title>
+    <link href="{{ url_for('static', filename='styles/projectbase.css') }}" rel="stylesheet" />
 <link href="{{ url_for('static', filename='styles/projects.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles/photofeature1.css') }}" rel="stylesheet" />
 <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+
+{% endblock %}</head>
+
 
 
 <div class="hero-container">
