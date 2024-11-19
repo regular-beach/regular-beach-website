@@ -147,6 +147,9 @@ nav {
     .title {
         font-size: 10em; /* Adjust font size for even smaller screens */
         top: 2.3em;
+        display: inline-block;
+        flex: 1;
+
     }
 
     nav {
@@ -154,6 +157,7 @@ nav {
         line-height: 10%;
         padding-top: 0;
         padding-bottom: 15px;
+        line-height: 8pt;
     }
 
     .featurephoto {
