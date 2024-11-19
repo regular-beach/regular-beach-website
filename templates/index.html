@@ -1,9 +1,17 @@
-{%extends "base.html"%}
-{% block head %}
-{{ super() }}
-<link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+ 
+  <link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+    <title>{% block title %}regular beach{% endblock %}</title>
 
-{% endblock %}
+
+{%extends "base.html"%}
+
 
 
 {% include 'header.html' %}
