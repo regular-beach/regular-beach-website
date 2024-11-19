@@ -145,7 +145,7 @@ nav {
 
 @media (max-width: 640px) {
     .title {
-        font-size: 10em; /* Adjust font size for even smaller screens */
+        font-size: 8em; /* Adjust font size for even smaller screens */
         top: 2.3em;
         display: inline-block;
         flex: 1;
