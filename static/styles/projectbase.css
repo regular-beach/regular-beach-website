@@ -76,3 +76,63 @@ p{
     position: relative;
     width: 100%
 }
+
+/*IMAGES */
+
+.image-grid {
+    position: relative;
+     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust minmax for size */
+     padding: 0; /* Optional padding */
+     margin: 0;
+    top: 80vh;
+    align-items: center;
+    left: 0;
+    padding: 0;
+ }
+ 
+ .grid-image {
+     width: 100vw; /* Ensure images fill the grid cell */
+     height: auto; /* Maintain aspect ratio */
+     margin: 0;
+     object-fit: cover;
+     left: 0;
+     padding: 0;
+ }
+ 
+ .vert{
+     width: auto;
+     height: 100vh;
+     object-fit: cover;
+     padding: 0;
+ }
+ 
+ @media (max-width: 640px) {
+     .image-grid {
+     position: absolute;
+     }
+ .vert{
+     width: 100VW;    
+     height: auto;
+ 
+ }
+ 
+ .grid-image{
+ 
+     width: 100%;
+     height: auto;
+ }
+     }
+     @media (max-width: 1080px) {
+         .image-grid {
+             top: 65vh;
+         }
+     
+     }
+ 
+     @media (max-width: 960px) {
+         .image-grid {
+             top: 50vh;
+         }
+     
+     }
+   

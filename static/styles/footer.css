@@ -1,0 +1,46 @@
+/* General footer styling */
+.footer {
+    display: flex; /* Enables Flexbox layout */
+    justify-content: space-between; /* Adds spacing between items */
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+   
+  }
+  
+  .footer-item {
+    display: flex; 
+    align-items: center;
+  }
+  
+ 
+  .logo {
+    width: 20vw;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+ 
+  .link1 {
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    color: rgb(17, 0, 253);
+    font-size: 1.5em;
+    text-decoration: none; /* Removes underline */
+  }
+  
+  .link1:hover {
+    text-decoration: underline; /* Adds underline on hover */
+  }
+  
+  /* Adjusting header styles */
+  h2 {
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    margin: 0; /* Removes default margin */
+    font-size: 1.5em;
+    color: rgb(17, 0, 253);
+  }
+  

@@ -1,11 +1,142 @@
-.video1 {
-    
-    top: 10em;
-    left: 0;
-    margin-left: 15px;
-    margin-bottom: 25px;
-    width: 50%;
-    height: 50vh;
-    overflow: none;
+
+.featured {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 15px;
+    margin: 15px;
+    position: relative;
+  }
+
+.index{
+    position: relative;
 }
 
+
+  .max {
+    width: 40%;
+    height: auto;
+    padding-left: 15px; /* Optional: Fine-tune spacing */
+  }
+  
+.letterprintlink {
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    font-size: 9vw; /* Responsive font size */
+    color: rgb(17, 0, 253);
+    display: inline-block;
+    flex: 1;
+    text-decoration: underline;
+    text-underline-offset: 40px;
+
+    
+}
+  
+  .photofeature1 {
+    width: 100vw;
+    height: auto;
+    flex: 1;
+    padding: 15px;
+    padding-bottom: 0;
+  }
+
+  .photofeature1link {
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    font-size: 3vw; /* Responsive font size */
+    color: rgb(17, 0, 253);
+    display: inline-block;
+    flex: 3vw;
+    padding-bottom: 15px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    padding-left: 15px;
+  }
+  
+  /* Video container styles */
+  .video1 {
+    flex: 1; /* Allows the video to take up remaining space */
+    max-width: 50%; /* Limits the video width */
+    height: auto;
+  }
+  
+  .video1 iframe {
+    width: 100%; /* Ensures the iframe fills the container */
+    height: 50vh; /* Sets the height relative to the viewport */
+    padding-left: 15px;
+  }
+  
+
+  @media (max-width: 1080px) {
+.index {
+    position: relative;
+    top: 70vh;
+    bottom: 0;
+}
+
+    .max {
+        width: 50%;
+        align-items: left;
+    }
+
+    .letterprintlink {
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    font-size: 10vw; /* Responsive font size */
+    color: rgb(17, 0, 253);
+    display: inline-block;
+    flex: 1;
+    text-decoration: underline;
+    text-underline-offset: 30px;
+    }
+    }       
+
+
+
+    @media (max-width: 960px) {
+        .letterprintlink {   
+            text-underline-offset: 20px;
+        }
+
+        .video1 {
+            max-width: 100%;
+            height: auto;
+            padding-right: 15px;
+        }
+    }
+
+
+@media (max-width: 640px) {
+    .featured {
+        flex-direction: column; /* Stack items */
+        align-items: center; /* Center align content */
+        margin-top: 40px; /* Ensure space below header */
+
+
+    }
+
+    .letterprintlink {
+        font-size: 14vw; /* Increase font size for smaller screens */
+    }
+
+    .index{
+        top: 90vh;
+    }
+
+    .max {
+        width: 100%;
+        align-items: left;
+        padding-left: 0;
+    }
+
+    .photofeature1link {
+        font-family: "stevie-sans", sans-serif;
+        font-weight: 200;
+        font-size: 8vw; /* Responsive font size */
+        color: rgb(17, 0, 253);
+        display: inline-block;
+        flex: 1vw;
+        text-decoration: none;
+        
+}
+}

@@ -20,6 +20,12 @@ body, html {
     justify-content: flex-start; /* Start alignment */
 }
 
+header {
+    width: 100%;
+    position: relative; /* Avoid absolute unless necessary */
+    z-index: 10; /* Ensure it's above other content */
+}
+
 .responsive-title {
     text-align: left; /* Center align the title */
 }
@@ -49,6 +55,7 @@ nav {
     color: grey;
     padding-top: 55px; /* Fixed distance below the title */
     padding-left: 15px;
+    padding-bottom: 0;
 }
 
 .return {
