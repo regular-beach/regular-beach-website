@@ -124,8 +124,9 @@
     }
 
     .max {
-        width: 100%;
-        align-items: left;
+        width: 100vw;
+        height: auto;
+        align-items: center;
         padding-left: 0;
     }
 
