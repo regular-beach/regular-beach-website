@@ -45,6 +45,10 @@ def buy():
 def about():
     return render_template('about.html')
 
+@app.route('/shop1')
+def shop1():
+    return render_template('shop1.html')
+
 
 projects = [
     {

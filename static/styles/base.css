@@ -14,3 +14,15 @@
   
 
 
+  a {
+    text-decoration: none;
+    color: rgb(17, 0, 253);
+}
+.return {
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    color: rgb(17, 0, 253);
+    padding-left: 15px;
+    padding-top: 25px;
+    font-size: 1.5em;
+}
