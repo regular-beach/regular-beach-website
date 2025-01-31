@@ -12,6 +12,11 @@
     position: relative;
 }
 
+.lumberdiv {
+  width: auto;
+  height: 100vh;
+  object-fit: cover;
+}
 
   .max {
     width: 40%;

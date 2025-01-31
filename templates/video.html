@@ -6,13 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="{{ url_for('static', filename='styles/base.css') }}" rel="stylesheet" />
+
 <link href="{{ url_for('static', filename='styles/video.css') }}" rel="stylesheet" />
 <link href="{{ url_for('static', filename='styles/header.css') }}" rel="stylesheet" />
 
+</head>
 
+<body>
 
-    <a class="return" href="{{ url_for('index') }}">Return</a>
+    <a class="returnvid" href="{{ url_for('index') }}">Return</a>
 
 
 <div class="video1">
@@ -46,4 +48,30 @@
             allowfullscreen>
         </iframe>
     </div>
-</div>
+
+    <div class="video1">
+        <iframe 
+            src="https://www.youtube.com/embed/0cc8wzXKKaQ?si=o1MgDyKiapncu328;controls=0" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="video1">
+        <iframe 
+            src="https://www.youtube.com/embed/N8I1AVZemxM?si=INSaDDqvYzKGYzD-;controls=0" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</body>
+</html>
+
+

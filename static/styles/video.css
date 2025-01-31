@@ -1,12 +1,24 @@
+body {
+    background-color: black;
+}
+
+.returnvid {
+    color: white;
+    font-family: FT88-Expanded;
+    margin-top: 55px; /* Fixed distance below the title */
+    padding-left: 15px;
+    font-size: 1.5em;
+}
+
+
 .video1 {
-    
     top: 10em;
     left: 0;
-    
     margin-bottom: 25px;
     padding-top: 25px;
     padding-left: 25px;
     overflow: none;
+    border: none;
 }
 
 iframe {
