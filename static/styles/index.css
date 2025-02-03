@@ -18,6 +18,8 @@
   object-fit: cover;
 }
 
+
+
   .max {
     width: 40%;
     height: auto;
@@ -113,7 +115,7 @@
 
 
 @media (max-width: 640px) {
-    .featured {
+    .featured , .lumberdiv {
         flex-direction: column; /* Stack items */
         align-items: center; /* Center align content */
         margin-top: 40px; /* Ensure space below header */
