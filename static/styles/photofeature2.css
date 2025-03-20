@@ -1,0 +1,62 @@
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    width: max-content;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.grid-container img {
+    width: 150px;
+    height: auto;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.collection {
+    position: relative;
+    width: 100%;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images horizontally */
+}
+.collection .wide {
+    width: 100vw;
+    height: 100%; 
+    padding: 5px;
+}
+.collection .long {
+    padding: 5px;
+    max-width: 100%; /* Prevents images from overflowing */
+    height: 100vh; /* Keeps aspect ratio */
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+        .interview {
+            padding: 2px;
+            margin-left: 15px;
+            margin-top: 10px;
+            font-family: "stevie-sans", sans-serif;
+            font-weight: 200;
+            font-size: 1em;
+            color: rgb(17, 0, 253);
+            top: 10%;
+            width: 70%;
+            left: 0;
+        }
+
+        @media (max-width: 940px) {
+         .grid-container{
+            grid-template-columns: repeat(3, 1fr);
+
+            }
+
+         
+        }

@@ -1,5 +1,17 @@
-<a class="return" href="{{ url_for('projects') }}">Return to Projects</a>
+<html lang="en" id="top">
+  <head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}photofeature2/Seth Eddy{% endblock %}</title>
+    <link href="{{ url_for('static', filename='styles/projectbase.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles/projects.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles/photofeature2.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
 
+{% endblock %}</head>
+
+<a class="return" href="{{ url_for('projects') }}">Return to Projects</a>
 <div class="project-details">
   <h1>{{ project['name'] }}</h1>
   
@@ -12,4 +24,62 @@
   <div class="project-description">
     <p>{{ project['description'] }}</p>
   </div>
+</div>
+</div>
+
+
+  <div class="grid-container">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/01.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/02.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/03.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/04.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/05.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/06.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/07.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/08.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/09.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/10.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/11.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/12.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/13.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/14.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/15.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/16.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/17.jpg') }}">
+    <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/18.jpg') }}">
+   
+</div>
+ 
+<div class="interview">
+  <p>what camera do you use?</p>
+  <p>Ricoh GR III</p>
+  
+  <p>when do you find yourself compelled to shoot a photo?</p>
+  <p>I explore distortion of the familiar. I am always hunting for interesting textures, reflections, and contrasts. My subject matter is definitely eclectic, but no matter where I am, I am looking for ways to use the objects and landscape around me to produce abstract compositions of a distorted reality.</p>
+
+  <p>what is this series?</p>
+  <p>Gloaming Umbra - A manipulation of the elusive ordinary.</p>
+</div>
+
+
+<div class=collection>
+  <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/01.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/02.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/03.jpg') }}">
+    <img class="wide" src="{{ url_for('static', filename='img/photofeatures/photofeature2/04.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/05.jpg') }}">
+    <img class="wide" src="{{ url_for('static', filename='img/photofeatures/photofeature2/06.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/07.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/08.jpg') }}">
+    <img class="wide" src="{{ url_for('static', filename='img/photofeatures/photofeature2/09.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/10.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/11.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/12.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/13.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/14.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/15.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/16.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/17.jpg') }}">
+    <img class="long" src="{{ url_for('static', filename='img/photofeatures/photofeature2/18.jpg') }}">
+
 </div>

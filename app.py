@@ -65,13 +65,14 @@ projects = [
         "artist": "reg-beach",
         "description": "12 imgs from 2 rolls of 35mm."
     },
-    #{
-        #"name": "photofeature2",
-       # "date": "november '24",
-       # "medium": "iphone",
-        #"artist": "july guzman",
-       # "description": "informing artistic practice."
-   # }
+    {
+        "name": "photofeature2",
+        "date": "March '25",
+        "medium": "digital photography",
+        "artist": "Seth Eddy",
+       "description": " Artist's selection of over a dozen b/w images - thank you seth."
+       
+    }
     
     # Add more projects as needed
 ]
