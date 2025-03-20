@@ -60,3 +60,11 @@
 
          
         }
+
+        @media (max-width: 500px) {
+            .grid-container img {
+                width: 100px;
+   
+            
+           }
+        }
