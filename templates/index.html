@@ -21,6 +21,12 @@
 {% block main %}
 <body>
   <div class="index">
+
+    <div class="featured">
+      <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/05.jpg') }}" alt="Image 13" class="seth">
+      <a class="pf2" href="{{ url_for('project', project_name='photofeature2') }}">photo feature with @texture.swatch</a>
+      
+    </div>
     <img src="{{ url_for('static', filename='img/projects/lumberdiv/lumberdiv_web.jpg') }}" alt="Regular Beach index" class="lumberdiv">
   <div class="featured">
     <img src="{{ url_for('static', filename='img/letterprint/max-shirt.gif') }}" alt="Image 13" class="max">

@@ -6,16 +6,34 @@
     gap: 15px;
     margin: 15px;
     position: relative;
+    max-width: 100%;
+    object-fit: contain;
   }
 
 .index{
     position: relative;
 }
+.seth {
+  height: 100vh;
+  width: auto;
+}
+
+.pf2 {
+  font-family: "stevie-sans", sans-serif;
+  font-weight: 200;
+  font-size: 20px; 
+  color: rgb(17, 0, 253);
+  display: inline-block;
+  text-underline-offset: 10px;
+  text-decoration: underline;
+
+}
 
 .lumberdiv {
   width: auto;
   height: 100vh;
-  object-fit: cover;
+  object-fit: contain;
+  
 }
 
 
@@ -50,7 +68,7 @@
   .photofeature1link {
     font-family: "stevie-sans", sans-serif;
     font-weight: 200;
-    font-size: 3vw; /* Responsive font size */
+    font-size: 20px; /* Responsive font size */
     color: rgb(17, 0, 253);
     display: inline-block;
     flex: 3vw;
@@ -141,7 +159,7 @@
     .photofeature1link {
         font-family: "stevie-sans", sans-serif;
         font-weight: 200;
-        font-size: 8vw; /* Responsive font size */
+        font-size: 16px;
         color: rgb(17, 0, 253);
         display: inline-block;
         flex: 1vw;

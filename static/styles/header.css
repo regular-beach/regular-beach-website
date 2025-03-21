@@ -67,6 +67,10 @@ nav {
     
 }
 
+#gif {
+    display: none;
+}
+
 ul {
     padding: 0; /* Remove default padding */
     list-style: none; /* Remove bullet points */
