@@ -33,6 +33,7 @@
   width: auto;
   height: 100vh;
   object-fit: contain;
+  max-width: 100%;
   
 }
 
@@ -133,12 +134,14 @@
 
 
 @media (max-width: 640px) {
-    .featured , .lumberdiv {
+    .featured {
         flex-direction: column; /* Stack items */
         align-items: center; /* Center align content */
         margin-top: 40px; /* Ensure space below header */
+    }
 
-
+    .lumberdiv {
+      height: 70vh;
     }
 
     .letterprintlink {
