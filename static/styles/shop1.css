@@ -57,3 +57,31 @@
 
     }
 }
+
+.images{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: max-content;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.images img {
+    width: 300px;
+    height: auto;
+    padding: 5px;
+    box-sizing: border-box;
+}
+@media (max-width: 940px) {
+    .images{
+       grid-template-columns: repeat(2, 1fr);
+       }
+
+    
+   }
+
+   @media (max-width: 640px) {
+       .images {
+        grid-template-columns: none;
+    }
+   }

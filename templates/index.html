@@ -23,9 +23,14 @@
   <div class="index">
 
     <div class="featured">
+      <img src="{{ url_for('static', filename='img/protologo/A3.jpg') }}" alt="Image 13" class="max">
+      <a class="letterprintlink" href="{{ url_for('shop1') }}">(((NEW))) Proto///Logo Tees</a>
+    </div>
+  
+
+    <div class="featured">
       <img src="{{ url_for('static', filename='img/photofeatures/photofeature2/05.jpg') }}" alt="Image 13" class="seth">
       <a class="pf2" href="{{ url_for('project', project_name='photofeature2') }}">photo feature with @texture.swatch</a>
-      
     </div>
     <img src="{{ url_for('static', filename='img/projects/lumberdiv/lumberdiv_web.jpg') }}" alt="Regular Beach index" class="lumberdiv">
   <div class="featured">
@@ -48,7 +53,6 @@
     </iframe>
   </div>
 </div>
-<a class="return" href="{{ url_for('shop1') }}">test</a>
 </body>
 {% endblock %}
 
