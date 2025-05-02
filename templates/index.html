@@ -39,6 +39,30 @@
 
   </div>
 
+  <div class="column column-right">
+    <img id="staticimage" class="featurephoto" src="{{ url_for('static', filename='img/index/px-18.png') }}">
+
+    <img id="gif" class="featurephoto" src="{{ url_for('static', filename='img/index/px-18.gif') }}">
+    
+</div>
+
+<script>
+const staticImageElement = document.getElementById('staticimage');
+const gifElement = document.getElementById('gif');
+
+// Mouse hover to show and play the GIF
+staticImageElement.addEventListener('mouseenter', function() {
+gifElement.style.display = 'block'; // Show the GIF
+staticImageElement.style.display = 'none'; // Hide the static image
+});
+
+// Mouse leave to hide the GIF and show the static image
+staticImageElement.addEventListener('mouseleave', function() {
+gifElement.style.display = 'none'; // Hide the GIF
+staticImageElement.style.display = 'block'; // Show the static image
+});
+</script>
+
       <img class="photofeature1" src="{{ url_for('static', filename='img/photofeatures/photofeature1/03.jpg') }}">
       <a class="photofeature1link" href="{{ url_for('project', project_name='photofeature1') }}">Photo Feature No. 1</a>
 
