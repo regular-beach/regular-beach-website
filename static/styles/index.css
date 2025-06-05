@@ -59,8 +59,8 @@
 }
   
   .photofeature1 {
-    width: 100vw;
-    height: auto;
+    width: auto;
+    height: 100vh;
     flex: 1;
     padding: 15px;
     padding-bottom: 0;

@@ -53,7 +53,7 @@ p{
 }
 
 .hero{
-    position: relative;
+    position: absolute;
     width: 100vw;
     z-index: -1;
     height: auto;
@@ -76,7 +76,7 @@ p{
      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust minmax for size */
      padding: 0; /* Optional padding */
      margin: 0;
-    top: 80vh;
+    
     align-items: center;
     left: 0;
     padding: 0;

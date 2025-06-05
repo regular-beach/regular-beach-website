@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+  <head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}letterprints{% endblock %}</title>
+    <link href="{{ url_for('static', filename='styles/projectbase.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles/projects.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+{% endblock %}</head>
+
+
+
+<a class="return" href="{{ url_for('projects') }}">Return</a>
+
+
+<div>
+  <header>
+  <h1>{{ project['name'] }}</h1>
+  
+  <div class="project-meta">
+    <p>Date: {{ project['date'] }}</p>
+    <p>Medium: {{ project['medium'] }}</p>
+    <p>Artist: {{ project['artist'] }}</p>
+  </div>
+
+  <div class="project-description">
+    {{ project['description'] }}
+  </div>
+  </header>
+</div>
+
+<div class="column">
+  <div class="image-grid">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/front.jpg') }}" alt="Image 1" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/02.jpg') }}" alt="Image 2" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/03.jpg') }}" alt="Image 3" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/04.jpg') }}" alt="Image 4" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/05.jpg') }}" alt="Image 5" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/06.jpg') }}" alt="Image 6" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/07.jpg') }}" alt="Image 7" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/08.jpg') }}" alt="Image 8" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/09.jpg') }}" alt="Image 9" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/10.jpg') }}" alt="Image 10" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/11.jpg') }}" alt="Image 11" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/12.jpg') }}" alt="Image 12" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/13.jpg') }}" alt="Image 13" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/14.jpg') }}" alt="Image 14" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/15.jpg') }}" alt="Image 15" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/16.jpg') }}" alt="Image 16" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/17.jpg') }}" alt="Image 17" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/18.jpg') }}" alt="Image 18" class="vert">
+      <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/19.jpg') }}" alt="Image 19" class="vert">
+     <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/20.jpg') }}" alt="Image 20" class="vert">
+        <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/21.jpg') }}" alt="Image 21" class="vert">
+        <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/22.jpg') }}" alt="Image 22" class="vert">
+        <img src="{{ url_for('static', filename='img/projects/tshirtsforthevisualarts/23.jpg') }}" alt="Image 23" class="vert">
+                </div>
+                </div>
+
+        

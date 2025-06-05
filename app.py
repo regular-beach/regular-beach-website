@@ -71,8 +71,22 @@ projects = [
         "medium": "digital photography",
         "artist": "Seth Eddy",
        "description": " Artist's selection of over a dozen b/w images - thank you seth."
-       
-    }
+    },
+        {
+        "name": "tshirtsforthevisualarts",
+        "date": "May '25",
+        "medium": "zine",
+        "artist": "reg beach",
+       "description": "archiving t shirts for the visual arts #1. may decrease publications excusivity value, but we like the multiple analog>digital processing transactions happening here. Made for Chain Mail @ Pretty Gritty sf."
+    },
+
+        {
+        "name": "Inventory",
+        "date": "May '25",
+        "medium": "zine",
+        "artist": "Hendrix Park",
+       "description": "archiving Inventory by Hendrix Park. Made for Chain Mail at Pretty Gritty sf."
+    },
     
     # Add more projects as needed
 ]

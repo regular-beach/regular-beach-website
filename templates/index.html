@@ -22,6 +22,9 @@
 <body>
   <div class="index">
 
+    <img class="photofeature1" src="{{ url_for('static', filename='img/projects/Inventory/04.jpg') }}">
+      <a class="photofeature1link" href="{{ url_for('project', project_name='Inventory') }}">Inventory by Hendrix Park</a>
+
     <div class="featured">
       <img src="{{ url_for('static', filename='img/protologo/A3.jpg') }}" alt="Image 13" class="max">
       <a class="letterprintlink" href="{{ url_for('shop1') }}">(((NEW))) Proto///Logo Tees</a>
@@ -45,26 +48,6 @@
     <img id="gif" class="featurephoto" src="{{ url_for('static', filename='img/index/px-18.gif') }}">
     
 </div>
-
-<script>
-const staticImageElement = document.getElementById('staticimage');
-const gifElement = document.getElementById('gif');
-
-// Mouse hover to show and play the GIF
-staticImageElement.addEventListener('mouseenter', function() {
-gifElement.style.display = 'block'; // Show the GIF
-staticImageElement.style.display = 'none'; // Hide the static image
-});
-
-// Mouse leave to hide the GIF and show the static image
-staticImageElement.addEventListener('mouseleave', function() {
-gifElement.style.display = 'none'; // Hide the GIF
-staticImageElement.style.display = 'block'; // Show the static image
-});
-</script>
-
-      <img class="photofeature1" src="{{ url_for('static', filename='img/photofeatures/photofeature1/03.jpg') }}">
-      <a class="photofeature1link" href="{{ url_for('project', project_name='photofeature1') }}">Photo Feature No. 1</a>
 
 
   <div class="video1">
