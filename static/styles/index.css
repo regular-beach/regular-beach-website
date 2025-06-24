@@ -148,6 +148,14 @@
         font-size: 14vw; /* Increase font size for smaller screens */
     }
 
+    .photofeature1 {
+      width: 100vw;
+      height: auto;
+      flex: 1;
+      padding: 15px;
+      padding-bottom: 0;
+    }
+
     .index{
         top: 100vh;
     }
