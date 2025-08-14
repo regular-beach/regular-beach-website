@@ -91,6 +91,21 @@ a {
     right: 0;
 }
 
+.small_middle{
+    padding-top: 50vh;
+    padding-bottom: 50vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.blue_squat{
+    max-width: 300px;
+    height: auto;
+    justify-content: center;
+    
+}
+
 @media (max-width: 960px) {
     .featurephoto {
         height: 100vh; /* Full height for the feature photo */

@@ -49,6 +49,10 @@ def about():
 def shop1():
     return render_template('shop1.html')
 
+@app.route('/shop2')
+def shop2():
+    return render_template('shop2.html')
+
 
 projects = [
     {

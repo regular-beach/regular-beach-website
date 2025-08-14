@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+<link href="{{ url_for('static', filename='styles/shop1.css') }}" rel="stylesheet" />
+    <title>buy</title>
+    </head>
+
+<body>
+    <div>
+<a class="return" href="{{ url_for('index') }}">Return</a>
+</div>
+
+
+
+<div class="shirt-container">
+    <img class="shirt" src="{{ url_for('static', filename='img/R/jj.jpg') }}">
+    <div class="text-content">
+        <div class="shirttitle">R tee</div>
+        <div class="shirtdescription">
+            <p>$25 + shipping</p>
+            <p>sizes in stock: m, xs</p>
+            <p>regular beach will consider make-to-order printing for specific sizes. </p>
+            <p>100% cotton, screen printed at regular beach HQ</p>
+            <p>please email regularbeachmedia@gmail.com for inquiries</p>
+        </div>
+    </div>
+</div>
+
+<div class="images">
+    <img class="shirt" src="{{ url_for('static', filename='img/R/jj2.jpg') }}">
+    <img class="shirt" src="{{ url_for('static', filename='img/R/jj3.jpg') }}">
+    <img class="shirt" src="{{ url_for('static', filename='img/R/jj4.jpg') }}">
+
+</div>
