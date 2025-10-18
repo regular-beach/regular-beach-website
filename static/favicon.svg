@@ -4,16 +4,22 @@
   <defs>
     <style>
       .st0 {
-        fill: #fff;
-        font-family: StevieSansBook, 'Stevie Sans';
-        font-size: 118px;
+        isolation: isolate;
       }
 
       .st1 {
+        fill: #fff;
+      }
+
+      .st2 {
         fill: #1100fd;
       }
     </style>
   </defs>
-  <rect class="st1" width="100" height="100" rx="17.91" ry="17.91"/>
-  <text class="st0" transform="translate(14.95 90.29)"><tspan x="0" y="0">R</tspan></text>
+  <rect class="st2" width="100" height="100" rx="17.91" ry="17.91"/>
+  <g class="st0">
+    <g class="st0">
+      <path class="st1" d="M70.05,90.29l-16.64-32.68h-18.53v32.68h-9.79V11.59h26.43c17.11,0,27.85,7.67,27.85,22.42,0,10.86-6.49,18.88-16.52,21.83l17.7,34.46h-10.5ZM51.76,49.58c10.5,0,17.46-5.31,17.46-15.58,0-9.32-6.14-14.16-17.82-14.16h-16.52v29.73h16.87Z"/>
+    </g>
+  </g>
 </svg>
