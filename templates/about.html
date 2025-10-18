@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+    <title>{% block title %}about{% endblock %}</title>
+
+    <!-- Base CSS -->
+    <link href="{{ url_for('static', filename='styles/base.css') }}" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+{%endblock%}
+</head>
+
 <a class="return" href="{{ url_for('index') }}">Return</a>
 <br>
 Regular Beach is an experimental platform and collective for artwork and ideas exploring the seams of digital and analog using vehicles including video, photo, printmaking, graphic design, creative code, among others.
