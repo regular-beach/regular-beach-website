@@ -7,6 +7,11 @@ app = Flask(__name__)
 app.debug = False
 
 @app.route('/')
+@app.route('/new')
+def new():
+    return render_template('new.html')
+
+
 @app.route('/index')
 def index():
     return render_template('index.html')
@@ -56,41 +61,48 @@ def shop2():
 
 projects = [
     {
-        "name": "letterprints",
-        "date": "'23 - present",
-        "medium": "lino-cut",
-        "artist": "reg-beach",
-        "description": "Regular Beach experimental type project no.1."
+        "name": "RTees",
+        "date": "July '25",
+        "medium": "shirt",
     },
-    {
-        "name": "photofeature1",
-        "date": "november '24",
-        "medium": "35mm",
-        "artist": "reg-beach",
-        "description": "12 imgs from 2 rolls of 35mm."
-    },
-    {
-        "name": "photofeature2",
-        "date": "March '25",
-        "medium": "digital photography",
-        "artist": "Seth Eddy",
-       "description": " Artist's selection of over a dozen b/w images - thank you seth."
-    },
-        {
-        "name": "tshirtsforthevisualarts",
+     
+      {
+        "name": "ProtologoTees",
         "date": "May '25",
-        "medium": "zine",
-        "artist": "reg beach",
-       "description": "archiving t shirts for the visual arts #1. may decrease publications excusivity value, but we like the multiple analog>digital processing transactions happening here. Made for Chain Mail @ Pretty Gritty sf."
+        "medium": "shirt",
     },
-
-        {
+  
+    {
         "name": "Inventory",
         "date": "May '25",
         "medium": "zine",
         "artist": "Hendrix Park",
        "description": "archiving Inventory by Hendrix Park. Made for Chain Mail at Pretty Gritty sf."
     },
+
+    {
+        "name": "tshirtsforthevisualarts",
+        "date": "May '25",
+        "medium": "zine",
+       "description": "archiving t shirts for the visual arts #1."
+    },
+
+        {
+        "name": "photofeature2",
+        "date": "March '25",
+        "medium": "digital photography",
+        "artist": "Seth Eddy",
+       "description": " Artist's selection of over a dozen b/w images - thank you seth."
+    },
+   
+    {
+        "name": "letterprints",
+        "date": "'23 - present",
+        "medium": "lino-cut",
+        "description": "Regular Beach experimental type project no.1."
+    },
+
+
     
     # Add more projects as needed
 ]

@@ -10,12 +10,21 @@
 
 <body>
     <footer class="footer">
-        <div class="footer-item">
-          <img class="logo" src="{{ url_for('static', filename='img/currentlogo.png') }}" alt="logo">
-          <h2>2024</h2>
+
+<div class="footer-item">
+<nav>
+                    <ul>
+                        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                        <li><a href="{{ url_for('video') }}">Video</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('index') }}">Index</a></li>
+                    </ul>
+                </nav>
         </div>
+
         <div class="footer-item">
-          <h2>built by <a href="https://new-graphics-2000.org/work" class="link1">NG2</a></h2>
+          <h2>© Regular Beach 2025</h2>
+          <h3>by <a href="https://new-graphics-2000.com/work" class="link1">NG2</a></h3>
         </div>
       </footer>
       

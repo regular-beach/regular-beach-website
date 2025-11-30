@@ -52,17 +52,19 @@ header {
 
 nav {
     font-family: FT88-Expanded;
-    color: grey;
+    color: rgb(17, 0, 253);
+    font-size: .5em !important;
     padding-top: 55px; /* Fixed distance below the title */
     padding-left: 15px;
     padding-bottom: 0;
 }
 
 .return {
-    font-family: FT88-Expanded;
-    color: rgb(189, 64, 127);
-    margin-top: 55px; /* Fixed distance below the title */
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    color: rgb(17, 0, 253);
     padding-left: 15px;
+    padding-top: 25px;
     font-size: 1.5em;
     
 }
@@ -78,7 +80,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: gray;
+    color: rgb(17, 0, 253);
     font-size: 3vw;
 }
 
@@ -91,20 +93,6 @@ a {
     right: 0;
 }
 
-.small_middle{
-    padding-top: 50vh;
-    padding-bottom: 50vh;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.blue_squat{
-    max-width: 300px;
-    height: auto;
-    justify-content: center;
-    
-}
 
 @media (max-width: 960px) {
     .featurephoto {

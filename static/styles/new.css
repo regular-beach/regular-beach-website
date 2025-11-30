@@ -1,0 +1,11 @@
+h2{
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    color: rgb(17, 0, 253);
+    font-size: 1.5em;
+    text-decoration: none;
+    
+    justify-content: center;
+    padding-top: 10px;
+    display: flex;
+}
