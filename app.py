@@ -113,26 +113,31 @@ import re
 import time
 
 UPLOAD_FOLDER = os.path.join(app.root_path, "uploads")
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # create folder if it doesn't exist
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/submit_drawing', methods=['POST'])
 def submit_drawing():
     data = request.get_json()
     img_data = data["image"]
 
-    # strip header
+    # Remove "data:image/png;base64,"
     img_str = re.sub('^data:image/.+;base64,', '', img_data)
     img_bytes = base64.b64decode(img_str)
 
-    # filename
     filename = f"drawing_{int(time.time())}.png"
     filepath = os.path.join(UPLOAD_FOLDER, filename)
 
-    # save file
     with open(filepath, "wb") as f:
         f.write(img_bytes)
 
-    return jsonify({"status": "success", "filename": filename})
+    return jsonify({"status": "ok", "filename": filename})
+
+from flask import send_from_directory
+
+@app.route("/uploads/<filename>")
+def uploaded_file(filename):
+    return send_from_directory(UPLOAD_FOLDER, filename)
+
 
 #if __name__ == '__main__':
 # app.run(host='0.0.0.0') 
