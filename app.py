@@ -112,6 +112,9 @@ import base64
 import re
 import time
 
+UPLOAD_FOLDER = os.path.join(app.root_path, "uploads")
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # create folder if it doesn't exist
+
 @app.route('/submit_drawing', methods=['POST'])
 def submit_drawing():
     data = request.get_json()
@@ -123,7 +126,7 @@ def submit_drawing():
 
     # filename
     filename = f"drawing_{int(time.time())}.png"
-    filepath = os.path.join("static", "drawings", filename)
+    filepath = os.path.join(UPLOAD_FOLDER, filename)
 
     # save file
     with open(filepath, "wb") as f:
