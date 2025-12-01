@@ -107,6 +107,29 @@ projects = [
     # Add more projects as needed
 ]
 
+from flask import jsonify
+import base64
+import re
+import time
+
+@app.route('/submit_drawing', methods=['POST'])
+def submit_drawing():
+    data = request.get_json()
+    img_data = data["image"]
+
+    # strip header
+    img_str = re.sub('^data:image/.+;base64,', '', img_data)
+    img_bytes = base64.b64decode(img_str)
+
+    # filename
+    filename = f"drawing_{int(time.time())}.png"
+    filepath = os.path.join("static", "drawings", filename)
+
+    # save file
+    with open(filepath, "wb") as f:
+        f.write(img_bytes)
+
+    return jsonify({"status": "success", "filename": filename})
 
 #if __name__ == '__main__':
 # app.run(host='0.0.0.0') 

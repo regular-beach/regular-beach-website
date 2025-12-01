@@ -2,7 +2,6 @@
 <html lang="en" id="top">
 <head>
  
-  <link href="{{ url_for('static', filename='styles/index.css') }}" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ url_for('static', filename='styles/new.css') }}" rel="stylesheet" />
@@ -16,11 +15,177 @@
 
 {% block main %}
 
-<body>
-    <h2>(((rb)))26 <br>
-    coming soon</h2>
-</body>
+
+    <div class="title">(((rb)))26 <br>
+    coming soon</div>
+
+    <div class="controls">
+  <button id="clearBtn">Clear</button>
+  <button id="submitBtn">Submit</button>
+</div>
+
+<div id="message">
+</div>
+
+    <canvas id="canvas"></canvas>
+
+   <script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let drawing = false;
+
+// Make canvas full screen and handle retina
+function resizeCanvas() {
+  const ratio = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth * ratio;
+  canvas.height = window.innerHeight * ratio;
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(ratio, ratio);
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+// Get mouse or touch position relative to canvas
+function getPos(e) {
+  const rect = canvas.getBoundingClientRect();
+  const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+  const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+  return { x, y };
+}
+
+// ------------------ MOUSE EVENTS ------------------
+
+// Start drawing on mousedown
+canvas.addEventListener("mousedown", e => {
+  drawing = true;
+  const pos = getPos(e);
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
+});
+
+// Stop drawing on mouseup or leaving canvas
+canvas.addEventListener("mouseup", () => drawing = false);
+canvas.addEventListener("mouseleave", () => drawing = false);
+
+// Draw while mouse button is held down
+canvas.addEventListener("mousemove", e => {
+  if (!drawing) return;
+  const pos = getPos(e);
+  ctx.lineWidth = 10;
+  ctx.lineCap = "round";
+  ctx.strokeStyle = "#000";
+  ctx.lineTo(pos.x, pos.y);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
+
+    for (let i = 0; i < 2; i++) {
+    const offsetX = (Math.random() - 0.5) * 2;
+    const offsetY = (Math.random() - 0.5) * 2;
+    ctx.beginPath();
+    ctx.moveTo(pos.x + offsetX, pos.y + offsetY);
+    ctx.lineTo(pos.x + offsetX, pos.y + offsetY);
+    ctx.stroke();
+  }
+
+});
+
+// ------------------ TOUCH EVENTS ------------------
+
+// Start drawing on touchstart
+canvas.addEventListener("touchstart", e => {
+  drawing = true;
+  const pos = getPos(e);
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
+});
+
+// Draw while touching
+canvas.addEventListener("touchmove", e => {
+  if (!drawing) return;
+  const pos = getPos(e);
+  ctx.lineTo(pos.x, pos.y);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
+  e.preventDefault(); // Prevent scrolling
+});
+
+// Stop drawing when touch ends
+canvas.addEventListener("touchend", () => drawing = false);
+canvas.addEventListener("touchcancel", () => drawing = false);
+
+// ------------------ CONTROLS ------------------
+
+// Clear button
+document.getElementById("clearBtn").onclick = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+};
+
+// Submit button
+const message = document.getElementById("message");
+
+document.getElementById("submitBtn").onclick = () => {
+  // ------------------ Check if canvas is blank ------------------
+  const imgDataCheck = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const pixels = imgDataCheck.data;
+  let isBlank = true;
+
+  for (let i = 0; i < pixels.length; i += 4) {
+    if (pixels[i + 3] !== 0) { // if alpha channel is not 0
+      isBlank = false;
+      break;
+    }
+  }
+
+  if (isBlank) {
+    message.textContent = "draw";
+    message.style.display = "block";
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 2000);
+    return; // stop submission
+  }
+
+  // ------------------ Submit drawing if not blank ------------------
+  const imgData = canvas.toDataURL("image/png");
+  fetch("/submit_drawing", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ image: imgData })
+  })
+  .then(res => res.json())
+  .then(data => {
+    // Show custom message
+    message.textContent = "thanks: " + data.filename;
+    message.style.display = "block";
+
+    // Hide message after 2 seconds
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 2000);
+
+    // Clear the canvas after successful submission
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+  })
+  .catch(err => {
+    message.textContent = "Error saving drawing.";
+    message.style.display = "block";
+    setTimeout(() => {
+      message.style.display = "none";
+    }, 2000);
+  });
+};
+
+
+
+</script>
+
 
 {% endblock %}
 
 {% include 'footer.html' %}
+
+
