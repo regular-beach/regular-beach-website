@@ -29,18 +29,20 @@
 
     <canvas id="canvas"></canvas>
 
-   <script>
+<script>
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 let drawing = false;
 
+// Scale factor for high-DPI / Retina screens
+const dpiScale = window.devicePixelRatio || 1;
+
 // Make canvas full screen and handle retina
 function resizeCanvas() {
-  const ratio = window.devicePixelRatio || 1;
-  canvas.width = window.innerWidth * ratio;
-  canvas.height = window.innerHeight * ratio;
+  canvas.width = window.innerWidth * dpiScale;
+  canvas.height = window.innerHeight * dpiScale;
   ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.scale(ratio, ratio);
+  ctx.scale(dpiScale, dpiScale);
 }
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
@@ -53,25 +55,9 @@ function getPos(e) {
   return { x, y };
 }
 
-// ------------------ MOUSE EVENTS ------------------
-
-// Start drawing on mousedown
-canvas.addEventListener("mousedown", e => {
-  drawing = true;
-  const pos = getPos(e);
-  ctx.beginPath();
-  ctx.moveTo(pos.x, pos.y);
-});
-
-// Stop drawing on mouseup or leaving canvas
-canvas.addEventListener("mouseup", () => drawing = false);
-canvas.addEventListener("mouseleave", () => drawing = false);
-
-// Draw while mouse button is held down
-canvas.addEventListener("mousemove", e => {
-  if (!drawing) return;
-  const pos = getPos(e);
-  ctx.lineWidth = 10;
+// ------------------ DRAWING HELPERS ------------------
+function drawLine(pos) {
+  ctx.lineWidth = 10 * dpiScale; // scale line thickness
   ctx.lineCap = "round";
   ctx.strokeStyle = "#000";
   ctx.lineTo(pos.x, pos.y);
@@ -79,20 +65,35 @@ canvas.addEventListener("mousemove", e => {
   ctx.beginPath();
   ctx.moveTo(pos.x, pos.y);
 
-    for (let i = 0; i < 2; i++) {
-    const offsetX = (Math.random() - 0.5) * 2;
-    const offsetY = (Math.random() - 0.5) * 2;
+  // Gritty effect
+  for (let i = 0; i < 2; i++) {
+    const offsetX = (Math.random() - 0.5) * 2 * dpiScale;
+    const offsetY = (Math.random() - 0.5) * 2 * dpiScale;
     ctx.beginPath();
     ctx.moveTo(pos.x + offsetX, pos.y + offsetY);
     ctx.lineTo(pos.x + offsetX, pos.y + offsetY);
     ctx.stroke();
   }
+}
 
+// ------------------ MOUSE EVENTS ------------------
+canvas.addEventListener("mousedown", e => {
+  drawing = true;
+  const pos = getPos(e);
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
+});
+
+canvas.addEventListener("mouseup", () => drawing = false);
+canvas.addEventListener("mouseleave", () => drawing = false);
+
+canvas.addEventListener("mousemove", e => {
+  if (!drawing) return;
+  const pos = getPos(e);
+  drawLine(pos);
 });
 
 // ------------------ TOUCH EVENTS ------------------
-
-// Start drawing on touchstart
 canvas.addEventListener("touchstart", e => {
   drawing = true;
   const pos = getPos(e);
@@ -100,18 +101,13 @@ canvas.addEventListener("touchstart", e => {
   ctx.moveTo(pos.x, pos.y);
 });
 
-// Draw while touching
 canvas.addEventListener("touchmove", e => {
   if (!drawing) return;
   const pos = getPos(e);
-  ctx.lineTo(pos.x, pos.y);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(pos.x, pos.y);
+  drawLine(pos);
   e.preventDefault(); // Prevent scrolling
 });
 
-// Stop drawing when touch ends
 canvas.addEventListener("touchend", () => drawing = false);
 canvas.addEventListener("touchcancel", () => drawing = false);
 
@@ -127,13 +123,12 @@ document.getElementById("clearBtn").onclick = () => {
 const message = document.getElementById("message");
 
 document.getElementById("submitBtn").onclick = () => {
-  // ------------------ Check if canvas is blank ------------------
   const imgDataCheck = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const pixels = imgDataCheck.data;
   let isBlank = true;
 
   for (let i = 0; i < pixels.length; i += 4) {
-    if (pixels[i + 3] !== 0) { // if alpha channel is not 0
+    if (pixels[i + 3] !== 0) {
       isBlank = false;
       break;
     }
@@ -142,13 +137,10 @@ document.getElementById("submitBtn").onclick = () => {
   if (isBlank) {
     message.textContent = "draw";
     message.style.display = "block";
-    setTimeout(() => {
-      message.style.display = "none";
-    }, 2000);
-    return; // stop submission
+    setTimeout(() => { message.style.display = "none"; }, 2000);
+    return;
   }
 
-  // ------------------ Submit drawing if not blank ------------------
   const imgData = canvas.toDataURL("image/png");
   fetch("/submit_drawing", {
     method: "POST",
@@ -157,31 +149,20 @@ document.getElementById("submitBtn").onclick = () => {
   })
   .then(res => res.json())
   .then(data => {
-    // Show custom message
     message.textContent = "thanks: " + data.filename;
     message.style.display = "block";
-
-    // Hide message after 2 seconds
-    setTimeout(() => {
-      message.style.display = "none";
-    }, 2000);
-
-    // Clear the canvas after successful submission
+    setTimeout(() => { message.style.display = "none"; }, 2000);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
   })
   .catch(err => {
     message.textContent = "Error saving drawing.";
     message.style.display = "block";
-    setTimeout(() => {
-      message.style.display = "none";
-    }, 2000);
+    setTimeout(() => { message.style.display = "none"; }, 2000);
   });
 };
-
-
-
 </script>
+
 
 
 {% endblock %}
