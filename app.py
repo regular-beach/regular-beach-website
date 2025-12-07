@@ -117,8 +117,8 @@ from flask import jsonify, request
 session = boto3.session.Session()
 space = session.client(
     "s3",
-    region_name="nyc3",  # change if needed
-    endpoint_url="https://nyc3.digitaloceanspaces.com",
+    region_name="sfo",
+    endpoint_url = f"https://{os.environ['SPACES_ENDPOINT']}",
     aws_access_key_id="YOUR_SPACES_KEY",
     aws_secret_access_key="YOUR_SPACES_SECRET"
 )
