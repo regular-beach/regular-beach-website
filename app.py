@@ -107,36 +107,49 @@ projects = [
     # Add more projects as needed
 ]
 
-from flask import jsonify
+import boto3
 import base64
-import re
 import time
+import re
+from flask import jsonify, request
 
-UPLOAD_FOLDER = os.path.join(app.root_path, "uploads")
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+# DigitalOcean Spaces client
+session = boto3.session.Session()
+space = session.client(
+    "s3",
+    region_name="nyc3",  # change if needed
+    endpoint_url="https://nyc3.digitaloceanspaces.com",
+    aws_access_key_id="YOUR_SPACES_KEY",
+    aws_secret_access_key="YOUR_SPACES_SECRET"
+)
 
-@app.route('/submit_drawing', methods=['POST'])
+@app.route("/submit_drawing", methods=["POST"])
 def submit_drawing():
-    data = request.get_json()
-    img_data = data["image"]
+    try:
+        data = request.get_json()
+        img_data = data["image"]
 
-    # Remove "data:image/png;base64,"
-    img_str = re.sub('^data:image/.+;base64,', '', img_data)
-    img_bytes = base64.b64decode(img_str)
+        # strip `data:image/png;base64,`
+        img_str = re.sub("^data:image/.+;base64,", "", img_data)
+        img_bytes = base64.b64decode(img_str)
 
-    filename = f"drawing_{int(time.time())}.png"
-    filepath = os.path.join(UPLOAD_FOLDER, filename)
+        filename = f"drawing_{int(time.time())}.png"
 
-    with open(filepath, "wb") as f:
-        f.write(img_bytes)
+        # upload to your Space
+        space.put_object(
+            Bucket="YOUR_BUCKET_NAME",
+            Key=filename,
+            Body=img_bytes,
+            ContentType="image/png",
+            ACL="public-read"
+        )
 
-    return jsonify({"status": "ok", "filename": filename})
+        return jsonify({"status": "ok", "filename": filename})
 
-from flask import send_from_directory
+    except Exception as e:
+        print("Upload error:", e)
+        return jsonify({"status": "error", "error": str(e)})
 
-@app.route("/uploads/<filename>")
-def uploaded_file(filename):
-    return send_from_directory(UPLOAD_FOLDER, filename)
 
 
 if __name__ == '__main__':
