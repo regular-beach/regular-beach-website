@@ -107,6 +107,7 @@ projects = [
     # Add more projects as needed
 ]
 
+import os
 import boto3
 import base64
 import time
@@ -115,12 +116,13 @@ from flask import jsonify, request
 
 # DigitalOcean Spaces client
 session = boto3.session.Session()
+
 space = session.client(
     "s3",
-    region_name="sfo",
-    endpoint_url = f"https://{os.environ['SPACES_ENDPOINT']}",
-    aws_access_key_id="SPACES_KEY",
-    aws_secret_access_key="SPACES_SECRET"
+    region_name=os.environ["SPACES_REGION"],           # e.g. "sfo3"
+    endpoint_url=f"https://{os.environ['SPACES_ENDPOINT']}",  # e.g. "sfo3.digitaloceanspaces.com"
+    aws_access_key_id=os.environ["SPACES_KEY"],
+    aws_secret_access_key=os.environ["SPACES_SECRET"]
 )
 
 @app.route("/submit_drawing", methods=["POST"])
@@ -129,15 +131,15 @@ def submit_drawing():
         data = request.get_json()
         img_data = data["image"]
 
-        # strip `data:image/png;base64,`
+        # Strip header (data:image/png;base64,...)
         img_str = re.sub("^data:image/.+;base64,", "", img_data)
         img_bytes = base64.b64decode(img_str)
 
         filename = f"drawing_{int(time.time())}.png"
 
-        # upload to your Space
+        # Upload to Spaces
         space.put_object(
-            Bucket="YOUR_BUCKET_NAME",
+            Bucket=os.environ["SPACES_BUCKET"],   # ENV VAR must exist
             Key=filename,
             Body=img_bytes,
             ContentType="image/png",
@@ -149,6 +151,7 @@ def submit_drawing():
     except Exception as e:
         print("Upload error:", e)
         return jsonify({"status": "error", "error": str(e)})
+
 
 
 
