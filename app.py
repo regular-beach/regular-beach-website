@@ -119,8 +119,8 @@ space = session.client(
     "s3",
     region_name="sfo",
     endpoint_url = f"https://{os.environ['SPACES_ENDPOINT']}",
-    aws_access_key_id="YOUR_SPACES_KEY",
-    aws_secret_access_key="YOUR_SPACES_SECRET"
+    aws_access_key_id="SPACES_KEY",
+    aws_secret_access_key="SPACES_SECRET"
 )
 
 @app.route("/submit_drawing", methods=["POST"])
