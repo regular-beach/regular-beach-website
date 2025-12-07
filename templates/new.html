@@ -55,7 +55,6 @@ function getPos(e) {
   return { x, y };
 }
 
-// ------------------ DRAWING HELPERS ------------------
 function drawLine(pos) {
   ctx.lineWidth = 10 * dpiScale; // scale line thickness
   ctx.lineCap = "round";
@@ -65,10 +64,11 @@ function drawLine(pos) {
   ctx.beginPath();
   ctx.moveTo(pos.x, pos.y);
 
-  // Gritty effect
+  // subtle gritty effect
+  const offsetFactor = 0.2;
   for (let i = 0; i < 2; i++) {
-    const offsetX = (Math.random() - 0.5) * 2 * dpiScale;
-    const offsetY = (Math.random() - 0.5) * 2 * dpiScale;
+    const offsetX = (Math.random() - 0.5) * 2 * offsetFactor * dpiScale;
+    const offsetY = (Math.random() - 0.5) * 2 * offsetFactor * dpiScale;
     ctx.beginPath();
     ctx.moveTo(pos.x + offsetX, pos.y + offsetY);
     ctx.lineTo(pos.x + offsetX, pos.y + offsetY);
