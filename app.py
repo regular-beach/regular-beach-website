@@ -115,42 +115,58 @@ import re
 from flask import jsonify, request
 
 # DigitalOcean Spaces client
-session = boto3.session.Session()
+def get_spaces_client():
+    required = [
+        "SPACES_KEY",
+        "SPACES_SECRET",
+        "SPACES_REGION",
+        "SPACES_ENDPOINT",
+        "SPACES_BUCKET"
+    ]
+    missing = [k for k in required if not os.getenv(k)]
+    if missing:
+        raise RuntimeError(f"Missing env vars: {missing}")
 
-space = session.client(
-    "s3",
-    region_name=os.environ["SPACES_REGION"],           # e.g. "sfo3"
-    endpoint_url=f"https://{os.environ['SPACES_ENDPOINT']}",  # e.g. "sfo3.digitaloceanspaces.com"
-    aws_access_key_id=os.environ["SPACES_KEY"],
-    aws_secret_access_key=os.environ["SPACES_SECRET"]
-)
+    return boto3.session.Session().client(
+        "s3",
+        region_name=os.getenv("SPACES_REGION"),
+        endpoint_url=f"https://{os.getenv('SPACES_ENDPOINT')}",
+        aws_access_key_id=os.getenv("SPACES_KEY"),
+        aws_secret_access_key=os.getenv("SPACES_SECRET")
+    )
+
 
 @app.route("/submit_drawing", methods=["POST"])
 def submit_drawing():
     try:
         data = request.get_json()
-        img_data = data["image"]
+        if not data or "image" not in data:
+            return jsonify({"status": "error", "error": "No image provided"}), 400
 
-        # Strip header (data:image/png;base64,...)
-        img_str = re.sub("^data:image/.+;base64,", "", img_data)
+        img_str = re.sub("^data:image/.+;base64,", "", data["image"])
         img_bytes = base64.b64decode(img_str)
 
         filename = f"drawing_{int(time.time())}.png"
 
-        # Upload to Spaces
+        space = get_spaces_client()
         space.put_object(
-            Bucket=os.environ["SPACES_BUCKET"],   # ENV VAR must exist
+            Bucket=os.getenv("SPACES_BUCKET"),
             Key=filename,
             Body=img_bytes,
             ContentType="image/png",
             ACL="public-read"
         )
 
-        return jsonify({"status": "ok", "filename": filename})
+        return jsonify({
+            "status": "ok",
+            "filename": filename,
+            "url": f"https://{os.getenv('SPACES_BUCKET')}.{os.getenv('SPACES_ENDPOINT')}/{filename}"
+        })
 
     except Exception as e:
         print("Upload error:", e)
-        return jsonify({"status": "error", "error": str(e)})
+        return jsonify({"status": "error", "error": str(e)}), 500
+
 
 
 
