@@ -138,16 +138,18 @@ a {
     width: 100%; /* Make title take full width */
     text-align: left; /* Center the title */
     position: absolute;
-    top: 1em;
+    top: 2.3em;
     z-index: 1; /* Bring it above the background photo */
+    display: inline-block;
 }
 
-nav {
-   
-    text-align: left; 
-    position: absolute; 
-    z-index: 1; 
-}
+    nav {
+        font-size: 6em;
+        line-height: 10%;
+        padding-top: 0;
+        padding-bottom: 15px;
+        line-height: 8pt;
+    }
 }
 
 @media (max-width: 640px) {
