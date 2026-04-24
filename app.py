@@ -61,6 +61,12 @@ def shop2():
 
 projects = [
     {
+        "name": "2346Bag",
+        "date": "2026",
+        "medium": "hardgood",
+    },
+
+    {
         "name": "R26",
         "date": "Feb '26",
         "medium": "shirt",
