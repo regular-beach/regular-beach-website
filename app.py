@@ -71,13 +71,6 @@ projects = [
         "date": "July '25",
         "medium": "shirt",
     },
-
-        {
-        "name": "AYW",
-        "date": "May '25",
-        "medium": "shirt",
-        "description": "Somewhere in California, Dave helps this yellow webber ascend to new heights. Anually."
-    },
      
       {
         "name": "ProtologoTees",
