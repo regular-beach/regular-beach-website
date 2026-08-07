@@ -1,63 +1,84 @@
-/* General reset for body and html */
-body, html {
+
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh; /* Make the row full height */
-}
 
-.column {
-    flex: 1 1 50%; /* Allow columns to grow and shrink */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: flex-start; /* Center items vertically */
-    justify-content: flex-start; /* Start alignment */
-}
+/* Header */
 
 header {
     width: 100%;
-    position: relative; /* Avoid absolute unless necessary */
-    z-index: 10; /* Ensure it's above other content */
+    position: relative;
+    z-index: 10;
 }
 
-.responsive-title {
-    text-align: left; /* Center align the title */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
 }
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Title */
 
 .line-break {
-    display: block; /* Forces the element to start on a new line */
+    display: block;
 }
 
 .title {
-    line-height: .8; /* Adjust line height */
+    line-height: .8;
     font-family: "stevie-sans", sans-serif;
     font-weight: 200;
-    font-size: 14.7vw; /* Responsive font size */
+    font-size: 14.7vw;
     color: rgb(17, 0, 253);
     letter-spacing: -.03em;
     padding: 0;
     display: inline-block;
+    text-decoration: none;
 }
+
+
+/* Fonts */
 
 @font-face {
     font-family: FT88-Expanded;
     src: url(/static/FT88-Expanded.ttf);
 }
 
+
+/* Navigation */
+
 nav {
     font-family: FT88-Expanded;
     color: rgb(17, 0, 253);
-    font-size: .5em !important;
-    padding-top: 55px; /* Fixed distance below the title */
+    padding-top: 55px;
     padding-left: 15px;
-    padding-bottom: 0;
 }
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(17, 0, 253);
+}
+
+nav a {
+    font-size: 3vw;
+}
+
+
+/* Return link */
 
 .return {
     font-family: "stevie-sans", sans-serif;
@@ -66,117 +87,80 @@ nav {
     padding-left: 15px;
     padding-top: 25px;
     font-size: 1.5em;
-    
 }
 
-#gif {
-    display: none;
-}
 
-ul {
-    padding: 0; /* Remove default padding */
-    list-style: none; /* Remove bullet points */
-}
-
-a {
-    text-decoration: none;
-    color: rgb(17, 0, 253);
-    font-size: 3vw;
-}
+/* GIF / Feature image */
 
 .featurephoto {
     position: absolute;
+    right: 0;
+    top: 0;
     padding-top: 2.5%;
     padding-right: 25px;
     width: 50%;
-    overflow: none;
-    right: 0;
 }
 
 
-@media (max-width: 960px) {
-    .featurephoto {
-        height: 100vh; /* Full height for the feature photo */
-    }
-
-    .column {
-        width: 100%; /* Full width for stacked columns */
-    }
-
-    .title {
-        margin-top: 20px; /* Space below the photo */
-        font-size: 10vw; /* Adjust font size for smaller screens */
-    }
-}
+/* Tablet */
 
 @media (max-width: 1080px) {
-.featurephoto {
-    position: relative; /* Make it fixed to cover the entire viewport */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100vw; /* Full width of the viewport */
-    height: 100%; /* Full height of the viewport */
-    object-fit: cover; /* Maintain aspect ratio while covering */
-    padding: 0;
-    display: inline-flexbox;
-}
 
-.row {
-    flex-direction: column; /* Stack columns */
-    height: auto; /* Allow height to adjust */
-}
+    .row {
+        flex-direction: column;
+        height: auto;
+    }
 
-.column {
-    width: 100%; /* Full width for stacked columns */
-    position: relative; /* Ensure column is positioned correctly */
-    margin-top: 0; /* No margin on top */
-}
+    .title {
+        margin-top: 0;
+        font-size: 10em;
+        width: 100%;
+        position: relative;
+        z-index: 3;
+    }
 
-.title {
-    margin-top: 0px; /* Space below the feature photo */
-    font-size: 10em; /* Adjust font size for smaller screens */
-    width: 100%; /* Make title take full width */
-    text-align: left; /* Center the title */
-    position: absolute;
-    top: 2.3em;
-    z-index: 1; /* Bring it above the background photo */
-    display: inline-block;
-}
+    .featurephoto {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        padding: 0;
+    }
 
     nav {
-        font-size: 6em;
-        line-height: 10%;
-        padding-top: 0;
+        position: relative;
+
+        z-index: 4;
+        padding-top: 15px;
         padding-bottom: 15px;
-        line-height: 8pt;
     }
+
+
 }
+
+
+/* Mobile */
 
 @media (max-width: 640px) {
-    .title {
-        font-size: 8em; /* Adjust font size for even smaller screens */
-        top: 2.3em;
-        display: inline-block;
-        flex: 1;
 
+    .title {
+        font-size: 8em;
+        display: inline-block;
     }
 
     nav {
-        font-size: 4em;
-        line-height: 10%;
+        font-size: 1em;
+        line-height: 1em;
         padding-top: 0;
         padding-bottom: 15px;
-        line-height: 8pt;
     }
 
     .featurephoto {
         position: absolute;
-        top: 0; /* Align to the top */
-        left: 0; /* Align to the left */
-        width: 100vw; /* Full width of the viewport */
-        height: auto; /* Full height of the viewport */
-        overflow: 0; /* Maintain aspect ratio while covering */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: auto;
         padding: 0;
-        display: inline-flexbox;
-}
+    }
 }

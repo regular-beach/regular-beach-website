@@ -1,0 +1,71 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevents scrolling */
+}
+
+.Directory {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    margin: auto;
+}
+
+.B {
+
+ font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    color: rgb(17, 0, 253);
+    font-size: 90vh;
+    text-align: center;
+}
+
+a{
+color: rgb(17, 0, 253) !important;
+text-decoration: none;
+}
+
+.satellite {
+    position: absolute;
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    color: rgb(17, 0, 253);
+    font-size: 1.5em;
+}
+
+.sat-i {
+    left: 27%;
+    top: 18%;
+    font-size: 1.5em;
+}
+.sat-m {
+    left: 67%;
+    top: 41%;
+    font-size: 1.5em;
+}
+
+.sat-who {
+    left: 50%;
+    top: 90%;
+    font-size: 1.5em;
+}
+
+.who {
+  display: flex;
+  width: 95%;
+  top: 20%
+}
+
+.sat-d {
+    left: 17%;
+    top: 59%;
+    font-size: 1.5em;
+}
+
+.sat-a {
+    left: 50%;
+    top: 59%;
+    font-size: 1.5em;
+}
+

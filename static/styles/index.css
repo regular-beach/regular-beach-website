@@ -7,10 +7,10 @@ html, body {
 
 /* MAIN WRAPPER */
 .index {
-top: 40vh;
   position: relative;
   width: 100%;
   max-width: 100%;
+  margin-bottom: 100px;
 }
 
 /* FEATURED SECTION */
@@ -22,15 +22,12 @@ top: 40vh;
   margin: 15px;
   position: relative;
   max-width: 100%;
-  flex-wrap: wrap; /* prevents overflow */
+  overflow: hidden;
 }
 
-/* IMAGE BLOCK */
 .max {
-  width: 40%;
-  height: auto;
-  padding-left: 15px;
-  max-width: 100%;
+  flex: 0 1 40%;
+  min-width: 0;
 }
 
 /* VIDEO */
@@ -54,7 +51,7 @@ top: 40vh;
   color: rgb(17, 0, 253);
   display: inline-block;
   text-decoration: underline;
-  text-underline-offset: 10px;
+  text-underline-offset: 0px;
 }
 
 .letterprintlink {
@@ -64,7 +61,8 @@ top: 40vh;
   color: rgb(17, 0, 253);
   display: inline-block;
   text-decoration: underline;
-  text-underline-offset: 40px;
+  text-underline-offset: 10px;
+  padding-bottom: 30px;
 }
 
 /* CENTERED SECTION */
@@ -105,7 +103,7 @@ top: 40vh;
   }
 
   .letterprintlink {
-    text-underline-offset: 20px;
+    text-underline-offset: 10px;
   }
 }
 
@@ -128,7 +126,8 @@ top: 40vh;
   }
 
   .letterprintlink {
-    font-size: 14vw;
+    font-size: 10vw;
+
   }
 
   .photofeature1 {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='styles/Directory.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='styles/new.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <title>{% block title %}regular beach{% endblock %}</title>
+</head>
+
+<body>
+
+    <div class="directory"></div>
+
+        <div class="title">300 years old
+    </div>
+
+<img class="who" src="{{ url_for('static', filename='img/Directory/who.svg') }}">
+
+    </div>
+
+</body>
+
+{% include 'footer.html' %}

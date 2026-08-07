@@ -11,6 +11,9 @@ app.debug = False
 def new():
     return render_template('new.html')
 
+@app.route('/Directory')
+def Directory():
+    return render_template('Directory.html')
 
 @app.route('/index')
 def index():
@@ -57,6 +60,10 @@ def shop1():
 @app.route('/shop2')
 def shop2():
     return render_template('shop2.html')
+
+@app.route("/who")
+def who():
+    return render_template("who.html")
 
 
 projects = [
@@ -120,9 +127,9 @@ projects = [
 ]
 
 import os
-import boto3
 import base64
 import time
+import boto3
 import re
 from flask import jsonify, request
 
@@ -183,11 +190,11 @@ def submit_drawing():
 
 
 
-if __name__ == '__main__':
- app.run(host='0.0.0.0') 
+#if __name__ == '__main__':
+# app.run(host='0.0.0.0') 
   
 if __name__ == "__main__":
-    serve(app, host="0.0.0.0", port=8000)
+    app.run(host="0.0.0.0", port=8000, debug=True, use_reloader=False)
 
 
     
