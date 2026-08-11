@@ -85,7 +85,7 @@ projects = [
         "name": "RTees",
         "date": "July '25",
         "medium": "shirt",
-        "hover_image": "img/R/Julia2.jpg"
+        "hover_image": "img/R/julia2.jpg"
     },
      
       {
