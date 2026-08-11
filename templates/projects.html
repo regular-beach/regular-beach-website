@@ -24,20 +24,51 @@
   </li>
 
   <!-- List of projects -->
-  {% for project in projects %}
-    <li>
-      <a class="project-link" href="{{ url_for('project', project_name=project['name']) }}">
-        {{ project['name'] }}
-      </a>
-      <span class="details">{{ project['date'] }}</span>
-      <span class="details">{{ project['medium'] }}</span>
-      <span class="details">{{ project['artist'] }}</span>
-    </li>
-  {% endfor %}
+{% for project in projects %}
+  <li 
+    class="project-item"
+    data-hover-image="{{ url_for('static', filename=project['hover_image']) }}"
+  >
+    <a class="project-link" href="{{ url_for('project', project_name=project['name']) }}">
+      {{ project['name'] }}
+    </a>
+    <span class="details">{{ project['date'] }}</span>
+    <span class="details">{{ project['medium'] }}</span>
+    <span class="details">{{ project['artist'] }}</span>
+  </li>
+{% endfor %}
 </ul>
+<div class="project-preview">
+    <img id="project-preview-image" src="" alt="">
+</div>
 
 
 
 </body>
 
+
 </html> 
+<script>
+const preview = document.querySelector('.project-preview');
+const previewImage = document.querySelector('#project-preview-image');
+const projects = document.querySelectorAll('.project-item');
+
+projects.forEach(project => {
+    const image = new Image();
+    image.src = project.dataset.hoverImage;
+
+    project.addEventListener('mouseenter', () => {
+        previewImage.src = project.dataset.hoverImage;
+        preview.classList.add('visible');
+    });
+
+    project.addEventListener('mousemove', (e) => {
+        preview.style.left = `${e.clientX + 20}px`;
+        preview.style.top = `${e.clientY + 20}px`;
+    });
+
+    project.addEventListener('mouseleave', () => {
+        preview.classList.remove('visible');
+    });
+});
+</script>

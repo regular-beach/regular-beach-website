@@ -71,38 +71,44 @@ projects = [
         "name": "2346Bag",
         "date": "2026",
         "medium": "hardgood",
+        "hover_image": "img/projects/2346Bag/13.jpg"
     },
 
     {
         "name": "R26",
         "date": "Feb '26",
         "medium": "shirt",
+        "hover_image": "img/projects/R26/05.jpg"
     },
 
     {
         "name": "RTees",
         "date": "July '25",
         "medium": "shirt",
+        "hover_image": "img/R/Julia2.jpg"
     },
      
       {
         "name": "ProtologoTees",
         "date": "May '25",
         "medium": "shirt",
+        "hover_image": "img/protologo/A3.jpg"
     },
   
-    {
+    { 
         "name": "Inventory",
         "date": "May '25",
         "medium": "zine",
         "artist": "Hendrix Park",
-       "description": "archiving Inventory by Hendrix Park. Made for Chain Mail at Pretty Gritty sf."
+       "description": "archiving Inventory by Hendrix Park. Made for Chain Mail at Pretty Gritty sf.",
+       "hover_image": "img/projects/Inventory/05.jpg"
     },
 
     {
         "name": "tshirtsforthevisualarts",
         "date": "May '25",
         "medium": "zine",
+        "hover_image": "img/projects/tshirtsforthevisualarts/09.jpg",
        "description": "archiving t shirts for the visual arts #1."
     },
 
@@ -111,19 +117,17 @@ projects = [
         "date": "March '25",
         "medium": "digital photography",
         "artist": "Seth Eddy",
-       "description": " Artist's selection of over a dozen b/w images - thank you seth."
+       "description": " Artist's selection of over a dozen b/w images - thank you seth.",
+       "hover_image": "img/photofeatures/photofeature2/05.jpg"
     },
    
     {
         "name": "letterprints",
         "date": "'23 - present",
         "medium": "lino-cut",
-        "description": "Regular Beach experimental type project no.1."
-    },
-
-
-    
-    # Add more projects as needed
+        "description": "Regular Beach experimental type project no.1.",
+        "hover_image": "img/letterprint/will4.png"
+    }
 ]
 
 import os
