@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <link href="{{ url_for('static', filename='styles/LAND.css') }}" rel="stylesheet" />
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://use.typekit.net/ppt4ahi.css">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <title>{% block title %}regular beach{% endblock %}</title>
+</head>
+
+{%extends "base.html"%}
+
+
+{% block main %}
+
+
+    <div class="title">(((rb)))26<br> <a href="https://shop.regularbeach.com/products/regular-beach-denim"> REGULAR BEACH JEANS!</a>
+    </div>
+    <div class="featured">
+      <img src="{{ url_for('static', filename='img/LAND/J.jpg') }}" alt="Image 13" class="LAND">
+
+      
+       <img src="{{ url_for('static', filename='img/LAND/J3.jpg') }}" alt="Image 13" class="LAND">
+      </div>
+
+{% endblock %}
+
+{% include 'footer.html' %}
+
+
