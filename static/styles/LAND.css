@@ -1,0 +1,41 @@
+.featured{
+    width: 100%;
+    height: 100%;
+
+}
+
+footer {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+}
+
+.LAND {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    position: relative;
+    z-index: 0;
+    
+    
+}
+
+.title{
+    font-family: "stevie-sans", sans-serif;
+    font-weight: 200;
+    color: rgb(17, 0, 253);
+    font-size: 1.5em;
+    text-decoration: underline;
+    justify-content: center;
+    padding-top: 10px;
+    display: flex;
+   position: fixed;
+    z-index: 100;
+}
+
+
+

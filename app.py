@@ -7,13 +7,17 @@ app = Flask(__name__)
 app.debug = False
 
 @app.route('/')
-@app.route('/new')
-def new():
-    return render_template('new.html')
+@app.route('/LAND')
+def LAND():
+    return render_template('LAND.html')
 
 @app.route('/Directory')
 def Directory():
     return render_template('Directory.html')
+
+@app.route('/new')
+def new():
+    return render_template('new.html')
 
 @app.route('/index')
 def index():
