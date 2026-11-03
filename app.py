@@ -82,7 +82,7 @@ projects = [
         "name": "HeartsTees",
         "date": "2026",
         "medium": "softgood",
-        "hover_image": "img/projects/Jeans/H6.jpg"
+        "hover_image": "img/projects/Hearts/H6.jpg"
     },
    
     {
@@ -95,21 +95,21 @@ projects = [
     {
         "name": "R26",
         "date": "Feb '26",
-        "medium": "shirt",
+        "medium": "softgood",
         "hover_image": "img/projects/R26/05.jpg"
     },
 
     {
         "name": "RTees",
         "date": "July '25",
-        "medium": "shirt",
+        "medium": "softgood",
         "hover_image": "img/R/julia2.jpg"
     },
      
       {
         "name": "ProtologoTees",
         "date": "May '25",
-        "medium": "shirt",
+        "medium": "softgood",
         "hover_image": "img/protologo/A3.jpg"
     },
   

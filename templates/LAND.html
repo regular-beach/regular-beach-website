@@ -17,8 +17,9 @@
 {% block main %}
 
 
-    <div class="title">(((rb)))26<br> <a href="{{ url_for('projects/Jeans') }}">Regular Beach Jeans!</a>
-    </div>
+<div class="title">(((rb)))26<br>
+    <a href="{{ url_for('project', project_name='RegularBeachJeans') }}"> Regular Beach Jeans!</a>
+</div>
     <div class="featured">
       <img src="{{ url_for('static', filename='img/LAND/J.jpg') }}" alt="Image 13" class="LAND">
 
