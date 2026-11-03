@@ -71,6 +71,20 @@ def who():
 
 
 projects = [
+           {
+        "name": "RegularBeachJeans",
+        "date": "2026",
+        "medium": "softgood",
+        "hover_image": "img/projects/Jeans/J1.jpg"
+    },
+
+               {
+        "name": "HeartsTees",
+        "date": "2026",
+        "medium": "softgood",
+        "hover_image": "img/projects/Jeans/H6.jpg"
+    },
+   
     {
         "name": "2346Bag",
         "date": "2026",
