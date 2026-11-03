@@ -72,7 +72,7 @@ def who():
 
 projects = [
            {
-        "name": "RegularBeachJeans",
+        "name": "Jeans",
         "date": "2026",
         "medium": "softgood",
         "hover_image": "img/projects/Jeans/J1.jpg"
