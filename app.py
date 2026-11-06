@@ -79,6 +79,14 @@ projects = [
     },
 
                {
+        "name": "HP+RB#1",
+        "date": "2026",
+        "medium": "gathering",
+        "hover_image": "img/projects/HP+RB/1.jpg",
+        "description": "some images from a pop up art show party at Hendrix Park studio."
+    },
+
+               {
         "name": "HeartsTees",
         "date": "2026",
         "medium": "softgood",
